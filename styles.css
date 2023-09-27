@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Italiana', serif;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    padding: 1.5rem 4rem;
+
+    font-size: 22px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+a {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #ff3131;
+}
+
+label {
+    font-size: 24px;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+input {
+    font-size: 20px;
+    font-family: 'Noto Sans Thai', sans-serif;
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    border-bottom: 1px solid #000;
+}
+
+input::placeholder {
+    color: #000;
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 100%;
+    font-size: 100px;
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    text-align: end;
+}
+
+button:hover {
+    color: #ff3131;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Noto Sans Thai', sans-serif;
+    letter-spacing: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff3131c5;
+}
+
+.logo {
+    font-size: 36px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+}
+
+.nav-link {
+    line-height: 2;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ff3131;
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    transition: right .4s, width .4s, left .4s;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+#home {
+    margin-top: -95px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__hero {
+    width: 1500px;
+    height: 900px;
+    overflow: hidden;
+    background-color: red;
+}
+
+#about {
+    width: 100%;
+    height: 100vh;
+
+    padding-top: 95px;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.about__container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+.about__container--left {
+    justify-content: center;
+
+    padding: 2rem 4rem;
+}
+
+.about__container--right {
+    flex-direction: column;
+
+    padding: 2rem 4rem;
+}
+
+.about__title {
+    font-size: 108px;
+    margin-bottom: 50px;
+}
+
+.about__subtitle {
+    font-size: 18px;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.about__col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.about__profile {
+    width: 500px;
+    height: 725px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+}
+
+.about__profile:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+
+#portfolio {
+    width: 100%;
+    height: 100vh;
+
+    padding-top: 95px;
+}
+
+.portfolio__container {
+    padding: 0 4rem;
+    height: 100%;
+}
+
+.project__title {
+    font-size: 108px;
+    margin-bottom: 50px;
+}
+
+.project__content {
+    display: flex;
+    justify-content: center;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 7.5rem;
+}
+
+.project {
+    width: 350px;
+    height: 350px;
+    background-color: rgb(30, 30, 30);
+    border: 1px solid #303030;
+    box-shadow: -8px 8px 0px 0px rgba(30, 30, 30, 0.8);
+    overflow: hidden;
+    margin-top: 15%;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+}
+
+.project:nth-child(2) {
+    margin-top: 50%;
+}
+
+.project:nth-child(4) {
+    margin-top: 50%;
+}
+
+.project__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.project:hover {
+    box-shadow: -8px 8px 0px 0px #ff3131;
+}
+
+.card__body {
+    position: absolute;
+    bottom: -100%; /* Change 'top' to 'bottom' and set it to -100% */
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
+    padding: 2rem;
+    transition: .5s ease-in-out;
+}
+
+.project:hover .card__body {
+    bottom: 0; /* Change 'right' to 'bottom' and set it to 0 */
+}
+
+.card__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 1rem;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.card__subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Noto Sans Thai', sans-serif;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+
+    padding-top: 95px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.contact__form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-bottom: 2rem;
+}
+
+.input__group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#email,
+#phone {
+    width: 45%;
+}
+
+.contact__container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__container--left {
+    margin-top: 7.5rem;
+    padding: 2rem 4rem;
+}
+
+.contact__container--right {
+    flex-direction: column;
+
+    padding: 2rem 4rem;
+}
+
+.contact__title {
+    font-size: 108px;
+}
+
+.contact__col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 2rem;
+
+    margin-top: auto;
+    margin-bottom: 4rem;
+}
+
+.contact__subtitle {
+    font-size: 18px;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.social {
+    font-size: 18px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    cursor: pointer;
+}
+
+.bx-right-arrow-alt {
+    margin-right: -10px;
+}
+
+.title__underline {
+    height: 30px;
+    margin-top: -40px;
+    background-color: #ff3131;
+}
+
+.title__underline--about {
+    width: 280px;
+}
+
+.title__underline--portfolio {
+    margin-left: 165px;
+    width: 370px;
+}
+
+.title__underline--contact {
+    width: 365px;
+}
