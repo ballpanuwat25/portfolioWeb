@@ -30,8 +30,7 @@ header {
 
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
+
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -107,6 +106,11 @@ p {
     background-color: #ff3131c5;
 }
 
+::selection {
+    background-color: #ff3131;
+    color: #fff;
+}
+
 .logo {
     font-size: 36px;
 }
@@ -116,6 +120,105 @@ p {
     align-items: center;
     gap: 7rem;
 }
+
+.nav-links--none {
+    font-size: 36px;
+    display: none;
+    align-items: center;
+}
+
+.ul-links--none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Add your CSS styles for the offcanvas menu here */
+.offcanvas-menu {
+    position: fixed;
+    top: -400px;
+    left: 0;
+    /* Offcanvas menu hidden by default */
+    width: 100%;
+
+    color: white;
+    transition: top 0.3s ease;
+}
+
+.offcanvas-menu ul {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.offcanvas-menu ul li {
+    padding: 10px;
+}
+
+.offcanvas-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    cursor: pointer;
+    z-index: 4;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 2em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+/* Style for overlay when menu is open (optional) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+    display: none;
+}
+
+.hamburger input:checked+svg+.overlay {
+    display: block;
+}
+
 
 .nav-link {
     line-height: 2;
@@ -152,7 +255,6 @@ p {
     width: 1500px;
     height: 900px;
     overflow: hidden;
-    background-color: red;
 }
 
 #about {
@@ -204,7 +306,7 @@ p {
 
 .about__profile {
     width: 500px;
-    height: 725px;
+    height: 100%;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: filter 0.2s ease-in-out;
@@ -242,27 +344,23 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 7.5rem;
+    width: 100%;
+    gap: 3rem;
+    position: absolute;
+    padding: 0 4rem;
 }
 
 .project {
-    width: 350px;
-    height: 350px;
-    background-color: rgb(30, 30, 30);
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
     border: 1px solid #303030;
-    box-shadow: -8px 8px 0px 0px rgba(30, 30, 30, 0.8);
     overflow: hidden;
-    margin-top: 15%;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     position: relative;
 }
 
-.project:nth-child(2) {
-    margin-top: 50%;
-}
-
-.project:nth-child(4) {
-    margin-top: 50%;
+.project:nth-child(2n) {
+    top: 100px;
 }
 
 .project__img {
@@ -272,13 +370,9 @@ p {
     z-index: 1;
 }
 
-.project:hover {
-    box-shadow: -8px 8px 0px 0px #ff3131;
-}
-
 .card__body {
     position: absolute;
-    bottom: -100%; /* Change 'top' to 'bottom' and set it to -100% */
+    bottom: -100%;
     right: 0;
     width: 100%;
     height: 100%;
@@ -291,7 +385,8 @@ p {
 }
 
 .project:hover .card__body {
-    bottom: 0; /* Change 'right' to 'bottom' and set it to 0 */
+    bottom: 0;
+    /* Change 'right' to 'bottom' and set it to 0 */
 }
 
 .card__title {
@@ -308,6 +403,56 @@ p {
     font-family: 'Noto Sans Thai', sans-serif;
     color: #fff;
     margin-top: 1rem;
+}
+
+.projects--none {
+    display: none;
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+
+    flex-direction: column;
+}
+
+.project--none {
+    width: 85%;
+    max-height: fit-content;
+    min-height: 75px;
+    background-color: rgba(255, 0, 0, 0.40);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.project--none:nth-child(2n) {
+    align-self: flex-end;
+}
+
+.project--none:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.55);
+}
+
+.project--none:nth-child(3) {
+    background-color: rgba(255, 0, 0, 0.70);
+}
+
+.project--none:nth-child(4) {
+    background-color: rgba(255, 0, 0, 0.85);
+}
+
+.project__link--none {
+    font-size: 36px;
+}
+
+.bx-link {
+    color: #fff !important;
+}
+
+.project__content--none {
+    font-family: 'Noto Sans Thai', sans-serif;
+    padding: 0 1rem;
 }
 
 #contact {
@@ -384,6 +529,22 @@ p {
     cursor: pointer;
 }
 
+.contact__col--none {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form--none {
+    margin-top: 3rem;
+    display: none;
+}
+
+.contact__col--none {
+    display: none;
+}
+
 .bx-right-arrow-alt {
     margin-right: -10px;
 }
@@ -405,4 +566,221 @@ p {
 
 .title__underline--contact {
     width: 365px;
+}
+
+@media screen and (max-width: 1380px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #portfolio {
+        height: 200vh;
+    }
+
+    .about__title,
+    .project__title,
+    .contact__title {
+        font-size: 72px;
+    }
+
+    .title__underline {
+        height: 20px;
+        margin-top: -25px;
+    }
+
+    .title__underline--about {
+        width: 200px;
+    }
+
+    .title__underline--portfolio {
+        margin-left: 100px;
+        width: 250px;
+    }
+
+    .title__underline--contact {
+        width: 250px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    #portfolio {
+        height: 170vh;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    #about {
+        height: 170vh;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .projects,
+    .nav-links {
+        display: none;
+    }
+
+    .projects--none,
+    .nav-links--none {
+        display: flex;
+    }
+
+    #portfolio {
+        height: 100vh;
+    }
+
+    header {
+        background: none;
+        backdrop-filter: none;
+
+        background-color: rgba(255, 255, 255);
+    }
+
+    .about__title,
+    .project__title,
+    .contact__title {
+        font-size: 54px;
+    }
+
+    .title__underline {
+        height: 15px;
+        margin-top: -20px;
+    }
+
+    .title__underline--about {
+        width: 150px;
+    }
+
+    .title__underline--portfolio {
+        margin-left: 75px;
+        width: 200px;
+    }
+
+    .title__underline--contact {
+        width: 175px;
+    }
+
+    .contact__container--left,
+    .contact__col {
+        display: none;
+    }
+
+    .bx-right-arrow-alt {
+        font-size: 50px;
+    }
+
+    button {
+        margin-top: -3rem;
+    }
+
+    .contact__col--none,
+    .form--none {
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width: 565px) {
+    .about__profile {
+        width: 425px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    header,
+    .portfolio__container {
+        padding: 1rem 2rem;
+    }
+
+    .portfolio__container {
+        height: 100vh;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hamburger svg {
+        height: 1.5em;
+    }
+
+    .about__profile {
+        width: 375px;
+        height: 525px;
+    }
+
+    .about__container {
+        height: auto;
+    }
+
+    #about {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .about__container--right {
+        padding-top: 0;
+    }
+
+    .about__subtitle {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .contact__subtitle,
+    .social {
+        font-size: 12px;
+    }
+
+    .contact__container--right {
+        margin-top: 50px;
+    }
+
+    #portfolio {
+        padding-top: 75px;
+    }
+
+    #contact {
+        height: 110vh;
+        padding-top: 0;
+    }
+
+    .projects--none {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #home {
+        margin-bottom: 150px;
+    }
+
+    .about__profile {
+        width: 325px;
+        height: 400px;
+    }
+
+    .about__container--right {
+        padding-top: 0;
+    }
+
+    .about__subtitle {
+        font-size: 14px;
+    }
+
+    .contact__container--right {
+        padding: 2rem 2rem;
+    }
+
+    .project__content--none {
+        font-size: 12px;
+    }
 }

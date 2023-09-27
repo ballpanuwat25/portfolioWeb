@@ -8,14 +8,15 @@
     <title>ballpanuwat25</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <header>
+    <header class="reveal">
         <div class="logo">
-            [v]
+            <a class="li-link--none" href="#home">[v]</a>
         </div>
         <div class="nav-links">
             <a class="nav-link" href="#home">Home</a>
@@ -23,11 +24,33 @@
             <a class="nav-link" href="#portfolio">Portfolio</a>
             <a class="nav-link" href="#contact">Contact Me</a>
         </div>
+        <div class="nav-links--none">
+            <label class="hamburger">
+                <input type="checkbox" id="menu-toggle">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+
+            <div id="offcanvas-menu" class="offcanvas-menu">
+                <ul class="ul-links--none">
+                    <li><a class="li-link--none" href="#home">Home</a></li>
+                    <li><a class="li-link--none" href="#about">About Me</a></li>
+                    <li><a class="li-link--none" href="#portfolio">Portfolio</a></li>
+                    <li><a class="li-link--none" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
+
     <section id="home">
         <div class="home__hero">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.455/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/Hf8huuObHMK-NU5n/scene.splinecode"></spline-viewer>
+            <spline-viewer loading-anim
+                url="https://prod.spline.design/Hf8huuObHMK-NU5n/scene.splinecode"></spline-viewer>
         </div>
     </section>
 
@@ -46,42 +69,36 @@
             <div class="about__subtitle">
                 ตอนนี้กำลังศึกษาอยู่ที่มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน คณะศิลปะศาสตร์และวิทยาศาสตร์
                 สาขาเทคโนโลยีสารสนเทศ
-                เป็นนิสิตชั้นปีที่ 4 และกำลังจะเรียนจบภายในสิ้นปีนี้ครับ โดยโปรเจคจบของผมจะเกี่ยวกับการพัฒนาเว็บไซต์ด้วย
-                React Node.js และ
-                MySQL
-                โดยมีวัตถุประสงค์เพื่อลดภาระงานของเจ้าหน้าที่ที่ต้องทำงานเกี่ยวกับการจัดการเบิกจ่ายสารเคมีของนิสิตในภาควิชาเคมีครับ
-                นอกเหนือจากนี้
-                ผมยังมีโปรเจคย่อย ๆ อีกหลายตัวที่ผมทำขึ้นเพื่อพัฒนาทักษะต่าง ๆ ของตัวเองครับ
-                โดยรายละเอียดจะอยู่ในส่วนของ Portfolio ครับ
+                เป็นนิสิตชั้นปีที่ 4 และกำลังจะเรียนจบภายในสิ้นปีนี้ครับ
             </div> <br>
             <div class="about__subtitle">
-                ส่วนทักษะต่าง ๆ ที่ผมมีจะแบ่งออกเป็น 3 ส่วนครับ คือ
+                ส่วนทักษะต่าง ๆ ที่มีผมจะแบ่งออกเป็น 3 ส่วนครับ ได้แก่
             </div> <br>
             <div class="about__col">
                 <div class="about__subtitle">
                     Frontend Skills <br>
-                    - HTML <br>
-                    - CSS <br>
-                    - JavaScript <br>
-                    - React <br>
-                    - Angular <br>
-                    - Next <br>
-                    - Bootstrap <br>
+                    HTML <br>
+                    CSS <br>
+                    JavaScript <br>
+                    React <br>
+                    Angular <br>
+                    Next <br>
+                    Bootstrap <br>
                 </div>
                 <div class="about__subtitle">
                     Backend Skills <br>
-                    - Node.js <br>
-                    - Express.js <br>
-                    - MySQL <br>
-                    - MongoDB <br>
+                    Node.js <br>
+                    Express.js <br>
+                    MySQL <br>
+                    MongoDB <br>
                 </div>
                 <div class="about__subtitle">
                     Tools <br>
-                    - Git <br>
-                    - GitHub <br>
-                    - VS Code <br>
-                    - Postman <br>
-                    - Figma <br>
+                    Git <br>
+                    GitHub <br>
+                    VS Code <br>
+                    Postman <br>
+                    Figma <br>
                 </div>
             </div>
         </div>
@@ -162,6 +179,47 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="projects--none">
+                    <div class="project--none">
+                        <div class="project__link--none">
+                            <a href="https://ballpanuwat25.github.io/todo-s/"><i class='bx bx-link'></i></a>
+                        </div>
+                        <div class="project__content--none">
+                            todo's: web application สำหรับจดสิ่งที่ต้องทำ ใช้ React ในการพัฒนา
+                            และเก็บข้อมูลบน localStorage
+                        </div>
+                    </div>
+
+                    <div class="project--none">
+                        <div class="project__link--none">
+                            <a href="https://ballpanuwat25.github.io/moxi/"><i class='bx bx-link'></i></a>
+                        </div>
+                        <div class="project__content--none">
+                            MOXi: web application สำหรับจัดการงาน ใช้ React ในการพัฒนา
+                            และเก็บข้อมูลบน localStorage
+                        </div>
+                    </div>
+
+                    <div class="project--none">
+                        <div class="project__link--none">
+                            <i class='bx bx-unlink'></i>
+                        </div>
+                        <div class="project__content--none">
+                            ปัญหาพิเศษ: web application
+                            พัฒนาโดย React Node.js และมีฐานข้อมูลเป็น MySQL
+                        </div>
+                    </div>
+
+                    <div class="project--none">
+                        <div class="project__link--none">
+                            <a href="https://areaconverter.netlify.app/"><i class='bx bx-link'></i></a>
+                        </div>
+                        <div class="project__content--none">
+                            Area Converter: website สำหรับแปลงหน่วยของพื้นที่โดยใช้ HTML CSS และ JavaScript ในการพัฒนา
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -189,6 +247,38 @@
             </div>
 
             <div class="contact__col">
+                <div class="contact__subtitle">
+                    <p> GENERAL ENQUIRIES </p> <br>
+                    Panuwat Pisavong <br><br>
+                    Frontend Developer <br><br>
+                    Phone <br>
+                    092-860-6105 <br> <br>
+                    Email <br>
+                    panuwat.pis@ku.th
+                </div>
+                <div class="contact__subtitle">
+                    <p> SOCIAL MEDIA </p><br>
+                    <a href="https://www.facebook.com/BallPanuwat00/" class="social">Facebook</a><br>
+                    <a href="https://www.instagram.com/_77x.9/" class="social">Instagram</a> <br>
+                    <a href="https://github.com/ballpanuwat25" class="social">Github</a> <br>
+                </div>
+            </div>
+
+            <form class="form--none">
+                <div class="contact__form">
+                    <input type="text" name="name" id="name" placeholder="NAME">
+                    <div class="input__group">
+                        <input type="email" name="email" id="email" placeholder="EMAIL">
+                        <input type="tel" name="phone" id="phone" placeholder="PHONE">
+                    </div>
+                    <input type="text" name="message" id="message" placeholder="MESSAGE">
+                </div>
+                <button>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+            </form>
+
+            <div class="contact__col--none">
                 <div class="contact__subtitle">
                     <p> GENERAL ENQUIRIES </p> <br>
                     Panuwat Pisavong <br><br>
