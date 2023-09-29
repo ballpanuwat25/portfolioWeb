@@ -58,6 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+ScrollReveal().reveal('.home__hero', {
+    delay: 300,
+    duration: 500,
+    distance: '50px',
+    origin: 'top',
+    easing: 'ease-in-out',
+    reset: true,
+    viewFactor: 0.2,
+});
+
 ScrollReveal().reveal('.reveal', {
     delay: 500,
     duration: 1000,
